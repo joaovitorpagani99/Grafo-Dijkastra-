@@ -1,0 +1,5 @@
+NewYork,Boston,Philadelphia,WashingtonDC,Chicago/7,4,5,1
+Chicago,Boston/10
+Philadelphia,WashingtonDC/2
+Boston
+WashingtonDC,Boston/1
