@@ -1,14 +1,14 @@
 package Arquivo;
 
 import Grafo.Aresta;
-import Grafo.Dijkstra;
 import Grafo.Grafo;
 import Grafo.Vertice;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,15 +27,15 @@ public class LerDoArquivo {
         File f = new File(nomeArquivo);
         String vertices[];
         String linha;
-        ArrayList<String[]> s1 = new ArrayList<String[]>();
+        ArrayList<String[]> s1 = new ArrayList<>();
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader(f));
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF-8"));
 
-            Map<String, Vertice> mapa = new HashMap<String, Vertice>();
+            Map<String, Vertice> mapa = new HashMap<>();
 
             while ((linha = br.readLine()) != null) {
-
+                System.out.println("Lendo a linha: " + linha);
                 if (linha.contains(",")) {
                     s1.add(linha.split("/"));
                     vertices = s1.get(0)[0].split(",");
@@ -45,8 +45,8 @@ public class LerDoArquivo {
                         v = new Vertice();
                     }
 
-                    List<Vertice> vizinhosAtual = new ArrayList<Vertice>();
-                    List<Aresta> arestasAtual = new ArrayList<Aresta>();
+                    List<Vertice> vizinhosAtual = new ArrayList<>();
+                    List<Aresta> arestasAtual = new ArrayList<>();
                     v.setDescricao(vertices[0]);
                     mapa.put(vertices[0], v);
 
@@ -86,7 +86,9 @@ public class LerDoArquivo {
                 }
                 g.adicionarVertice(v);
                 s1.clear();
+                
             }
+            //imprimirGrafo(g);
 
         } catch (FileNotFoundException e) {
             System.out.println("Nao encontrou o arquivo");
@@ -96,23 +98,21 @@ public class LerDoArquivo {
             e.printStackTrace();
         }
         return g.getVertices();
+        
+        
     }
     
-    public static void main(String args[]) {
-
-		Grafo teste = new Grafo();
-
-		teste.setVertices(lerGrafo(args[0]));
-		Vertice i1 = new Vertice();
-		Vertice i2 = new Vertice();
-		i1 = teste.encontrarVertice(args[1]);
-		i2 = teste.encontrarVertice(args[2]);
-		List<Vertice> resultado = new ArrayList<Vertice>();
-		Dijkstra algoritmo = new Dijkstra();
-		resultado = algoritmo.encontrarMenorCaminhoDijkstra(teste, i1, i2);
-		System.out.println("Esse é o menor caminho feito pelo algoritmo:"
-				+ resultado);
-	}
-
+    public static void imprimirGrafo(Grafo grafo) {
+    for (Vertice vertice : grafo.getVertices()) {
+        System.out.println("Vértice: " + vertice.getDescricao());
+        System.out.println("Arestas:");
+        for (Aresta aresta : vertice.getArestas()) {
+            System.out.println(" - " + aresta.getDestino().getDescricao() + " com peso " + aresta.getPeso());
+        }
+        System.out.println();
+    }
+}
 
 }
+
+

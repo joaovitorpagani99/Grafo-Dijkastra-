@@ -1,5 +1,20 @@
-NewYork,Boston,Philadelphia,WashingtonDC,Chicago/7,4,5,1
-Chicago,Boston/10
-Philadelphia,WashingtonDC/2
-Boston
-WashingtonDC,Boston/1
+Goiânia,silvania,trindade,hidrolandia,itaberai/84,26,36,100
+silvania,anapolis,Goiânia/69,84
+trindade,Goiânia,Anicuns,São Luis de Montes Belos/26,67,60
+hidrolandia,Goiânia,Piracanjuba/36,51
+itaberai,Goiânia,Petrolina de Goiás,São Luis de Montes Belos/100,70,122
+anapolis,Petrolina de Goiás,silvania/55,69
+Petrolina de Goiás,anapolis,itaberai/55,70
+Anicuns,itaberai,trindade/62,67
+São Luis de Montes Belos,itaberai,trindade/122,127
+Orizona,Pires Do Rio,Piracanjuba/34,107
+Cristalina,Ipameri,Pires Do Rio/170,136
+Piracanjuba,Orizona,Pontalina,Caldas Novas/107,84,78
+Pontalina,Piracanjuba,Goiatuba/84,72
+Morrinhos,Goiatuba,Caldas Novas,Piracanjuba/54,58,90
+Goiatuba,Pontalina,Morrinhos/72,54
+Caldas Novas,Morrinhos,Pires Do Rio,Piracanjuba/58,68,78
+Urutai,Ipameri,Pires Do Rio/32,29
+Pires Do Rio,Urutai,Orizona,Caldas Novas/29,34,68
+Ipameri,Campos Alegre de Goiás,Urutai,Cristalina/58,32,170
+Campos Alegre de Goiás,Ipameri/58

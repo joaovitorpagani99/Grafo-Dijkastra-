@@ -15,11 +15,9 @@ public class Aresta {
     private Vertice destino;
 
     public Aresta(Vertice v1, Vertice v2) {
-
         this.peso = 1;
         this.origem = v1;
         this.destino = v2;
-
     }
 
     public void setPeso(int novoPeso) {
@@ -47,5 +45,7 @@ public class Aresta {
     public Vertice getOrigem() {
         return origem;
     }
+    
+    
 
 }
